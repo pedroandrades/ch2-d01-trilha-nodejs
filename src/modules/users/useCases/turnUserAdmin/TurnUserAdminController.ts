@@ -11,7 +11,7 @@ class TurnUserAdminController {
     try {
       userAdmin = this.turnUserAdminUseCase.execute({ user_id });
     } catch (error) {
-      return response.status(404).json({ error });
+      return response.status(404).json({ error: error.toString() });
     }
 
     return response.status(201).send(userAdmin);
